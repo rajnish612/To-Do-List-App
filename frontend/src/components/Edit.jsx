@@ -19,7 +19,7 @@ function Edit() {
 
   const fetchTask = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/${id}`);
+      const response = await axios.get(`https://to-do-list-app-1-8ov1.onrender.com/${id}`);
       setTask(response.data);
       setLoading(false);
     } catch (err) {
@@ -40,7 +40,7 @@ function Edit() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/update/${id}`, task);
+      await axios.put(`https://to-do-list-app-1-8ov1.onrender.com/${id}`, task);
       alert('Task updated successfully!');
       navigate('/dashboard');
     } catch (err) {

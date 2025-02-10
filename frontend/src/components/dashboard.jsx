@@ -47,7 +47,7 @@ function Dashboard() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://localhost:5000");
+      const response = await axios.get("https://to-do-list-app-1-8ov1.onrender.com");
       setList(response.data);
       setFilteredList(response.data);
       setLoading(false);
@@ -61,7 +61,7 @@ function Dashboard() {
   // Delete task
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:5000/delete/${id}`);
+      const response = await axios.delete(`https://to-do-list-app-1-8ov1.onrender.com/delete/${id}`);
       setList(prev => prev.filter(el => el._id !== id));
       setFilteredList(prev => prev.filter(el => el._id !== id));
       alert(response.data.message);
