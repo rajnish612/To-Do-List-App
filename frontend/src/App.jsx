@@ -3,7 +3,7 @@ import {BrowserRouter , Routes, Route} from "react-router-dom"
 import Dashboard from './components/dashboard'
 import CreateTask from './components/createTask'
 import { useLocation } from 'react-router-dom'
-
+import Edit from './components/Edit';
 function App() {
 
 function AppContent(){
@@ -23,8 +23,9 @@ if(location.pathname === "/"){
 }
 },[location.pathname])  //or we can also remove dependency
  return <Routes>
- <Route path="/" element={<CreateTask/>}></Route>
+ <Route path="/create" element={<CreateTask/>}></Route>
  <Route path='/dashboard' element={<Dashboard/>}></Route>
+ <Route path="/edit/:id" element={<Edit />} />
 </Routes>
 }
   return (

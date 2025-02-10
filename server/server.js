@@ -40,6 +40,43 @@ res.status(200).json({message: "Content succesfully created"})
     }
 
 })
+app.get('/:id', async (req, res) => {
+    try {
+        const task = await list.findById(req.params.id);
+        if (!task) {
+            return res.status(404).json({ message: "Task not found" });
+        }
+        res.json(task);
+    } catch (err) {
+        res.status(500).json({ message: "Error fetching task", error: err.message });
+    }
+});
+
+app.put('/update/:id', async (req, res) => {
+    try {
+        if (!req.body.title) {
+            return res.status(400).json({ message: "Task name is required" });
+        } else if (!req.body.content) {
+            return res.status(400).json({ message: "Task Details are required" });
+        }
+
+        const updatedTask = await list.findByIdAndUpdate(
+            req.params.id,
+            {
+                title: req.body.title,
+                content: req.body.content
+            },
+            { new: true }
+        );
+
+        if (!updatedTask) {
+            return res.status(404).json({ message: "Task not found" });
+        }
+        res.json({ message: "Task updated successfully", task: updatedTask });
+    } catch (err) {
+        res.status(400).json({ message: "Error updating task", error: err.message });
+    }
+});
 app.delete("/delete/:id", async(req,res)=>{
     try{
     const Delete = await list.deleteOne({_id: req.params.id})
