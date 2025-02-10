@@ -24,7 +24,7 @@ function CreateTask() {
 
       setTimeout(() => {
         setSuccessAlert((prev) => !prev);
-        navigate("/dashboard");
+        navigate("/");
       }, 1500);
     } catch (err) {
       setMessage(err.response.data.message)

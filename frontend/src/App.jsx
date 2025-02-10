@@ -11,20 +11,20 @@ function AppContent(){
   useEffect(()=>{
   
 
-  if(location.pathname==="/dashboard"){
-    document.body.classList.add("dashboard")
-} else {
-    document.body.classList.remove("dashboard")
-}  
-if(location.pathname === "/"){
-  document.body.classList.add("home")
-} else {
-  document.body.classList.remove("home")
-}
+    if(location.pathname==="/dashboard"){
+      document.body.classList.add("dashboard")
+  } else {
+      document.body.classList.remove("dashboard")
+  }  
+  if(location.pathname === "/"){
+    document.body.classList.add("home")
+  } else {
+    document.body.classList.remove("home")
+  }
 },[location.pathname])  //or we can also remove dependency
  return <Routes>
  <Route path="/create" element={<CreateTask/>}></Route>
- <Route path='/dashboard' element={<Dashboard/>}></Route>
+ <Route path='/' element={<Dashboard/>}></Route>
  <Route path="/edit/:id" element={<Edit />} />
 </Routes>
 }

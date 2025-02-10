@@ -4,9 +4,11 @@ import dotenv from "dotenv"
 import jwt from "jsonwebtoken"
 import mongoose from "mongoose"
 import cors from "cors"
+
+dotenv.config({path: "../.env"})
 const app = express();
 app.use(cors())
-mongoose.connect(`mongodb://127.0.0.1:27017/List`)
+mongoose.connect(process.env.database_key)
 .then(()=>console.log("mongoDB connected"))
 .catch((err)=>console.log(err))
 
