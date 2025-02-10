@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes createTask{
+    from {opacity: 0; transform: translateY(100px);}
+    to {opacity: 1; transform: translateY(0px);}
+}
+.home{
+    background-image: url("./images/Leonardo_Phoenix_10_A_minimalist_digital_illustration_of_a_cle_3.jpg");
+    min-height: 100vh;
+    min-width: 100vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.alert{
+    transition: 1s ease;
+    width: 50vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.dashboard{
+
+    font-family: "Wendy One", serif;
+    /* background-image:url("./images/dashboard.jpg"); */
+    background:linear-gradient(black,purple);
+    min-height: 100vh;
+background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+}
+
+.create-task{
+    animation: createTask 0.5s linear ;
+    font-family: "Josefin Sans", serif;
+   
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1), -5px -5px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 20px;
+    gap: 40px;
+    background-color: rgba(248, 252, 251, 0.938);
+    width: 30vw;
+    height: 70vh;
+    margin: 5% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.create-task h1{
+    animation: createTask 1s ease-out ;
+}
+
+.task-details{
+   
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.input::placeholder {
+    animation: createTask 1s ease-out ;
+    color: gray;
+  }
+.create-task .profile-logo{
+    animation: createTask 1s ease-out ;
+    
+    border-radius: 50%;
+    position: relative;
+    height: 15vh;
+    width: 7vw;
+   flex-shrink: 0;
+   
+    
+}
+
+
+.plus-icon{
+    margin-top: 50px;
+}
+.task-details label{
+
+    animation: createTask 1s ease-out ;
+   }
+.create-task .button{
+    animation: createTask 1s ease-out ;
+}
+.create-task .Avatar{
+ outline: 5px solid lightsalmon;
+}
+.dashboard-container{
+    position: relative;
+    padding: 30px;
+    padding-bottom: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  
+    margin: 100px auto;
+   max-width: 69vw;
+    /* background-color: blueviolet; */
+ border-radius: 20px;
+
+   min-height: 70vh;
+}
+.lists{
+border-radius: 20px;
+    box-shadow: 1px 5px 10px rgba(0,0,0,0.3);
+    border-bottom: 10px solid whitesmoke;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    width: 90%;
+    min-height: 15vh;
+    background: linear-gradient(rgba(232, 232, 46,0.5) ,white);
+    padding: 30px;
+}
+
+.lists p{
+    font-weight: bolder;
+    color: white;
+}
+small{
+ opacity: 0.5;
+ font-size: xx-small;
+   color: white;
+}
+.addTask{
+    display: inline;
+    flex-shrink: 0;
+    background-color: rebeccapurple;
+   border-radius: 20px;
+    height: 20vh;
+    margin: 0;
+    min-width: 69vw;
+    position: sticky;
+
+}
+.dashboard-buttons{
+    position: absolute;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 90%;
+    bottom: -20px;
+    margin-top: 20px;
+}
